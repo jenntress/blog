@@ -1,0 +1,62 @@
+## Personal Blogging Site
+This is a full stack javascript project, utilizing all the tools and technologies I have learned while attending BCSA. The project will consist of a Home page, which markets my current skillsets as a developer, complete with an about me, and portfolio section. The project will also have a bloggin engine, with a section for users to view blog posts, filter by category, and leave feedback via comments. User authentication will also be implemented, as a means of who can create Posts and leave comments.
+
+### Install Instructions
+1. ```git clone <url>```
+2. more to come
+
+
+### Backend Overview
+**Technologies**
+- NodeJS
+- ExpressJS
+- MongoDB
+- Mongo
+
+**API**
+- Document all your endpoints, how to utilize them, and the expected response for each endpoint.
+
+**Resources**
+- Article title
+- Article content
+- Example:
+```
+{
+     title: "My First Blog Post",
+     content: "Lorem ipsum etc..."
+   }
+```
+
+### Front End Overview
+**Technologies**
+- ReactJS
+- React Router
+- Bootstrap
+
+**Pages**
+- Home
+- Blog
+  - Articles List
+  - View Articles
+  - Edit Articles
+- Contact
+
+### Stage One
+- Create functional Node/Express Application
+- Implement CRUD RESTful API for Article Resource
+- TDD: Implement at least 3 tests
+
+### Stage Two
+- Create function React App
+- Implement Router, to get to each one of your "container" comps
+- Implement client side CRUD for Articles
+
+### Project Roadmap
+- Seed Dev DB with fake data using
+[faker](https://github.com/Marak/faker.js)
+- User Auth with [auth0](https://auth0.com/)
+- Protecting routes/functionality from non-authtenticated users
+- Forming Comments/Articles relationships
+- Design Home page using [Sketch](https://www.sketchapp.com/)
+- Update Article to have category & category relationships
+- Migrate to production using [Heroku](https://heroku.com)

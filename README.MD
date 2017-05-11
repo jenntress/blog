@@ -15,6 +15,12 @@ This is a full stack javascript project, utilizing all the tools and technologie
 
 **API**
 - Document all your endpoints, how to utilize them, and the expected response for each endpoint.
+POST - to post a new article, go to :/api/articles
+DELETE - to delete one of your entries, go to
+PUT - to update and make changes to an existing entry, go to
+GET - to list all your entries, go to
+GETbyID - to view one specific article, go to
+
 
 **Resources**
 - Article title

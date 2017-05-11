@@ -41,6 +41,39 @@ Router.route('/')
         res.json(sh)
       }
     });
-  })
+  });
+
+  //***** DELETE ********
+    Router.route('/:article_id')
+     .delete(function(req, res){
+       Article.remove({_id: req.params.article_id}, function (err){
+         if(err){
+           console.log(err)
+         }else{
+           res.send("article successfully removed!")
+         }
+       });
+     });
+
+     //****** PUT *******
+      Router.route('/:article_id')
+       .put(function(req, res){
+         Article.findById(req.params.article_id, function(err, entry){
+           if(!entry) return res.status(404).send(err, "Can't find that article");
+           entry.loadData(req.body);
+           entry.save(function(e){
+             if(e){
+               res.status(500).send(e);
+             }else{
+               res.json(entry);
+             }
+           });
+         });
+       });
+
+
+
+
+
 
   module.exports = Router;

@@ -1,0 +1,5 @@
+.LargeButton {
+  composes: button from '../../sharedStyles/styles.css';
+  font-size: 23px;
+  color: blue;
+}

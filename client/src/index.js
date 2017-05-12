@@ -9,8 +9,7 @@ import {Router,
         from 'react-router'
 
 import App from './App';
-import {HomeContainer} from './containers'
-import {AboutContainer} from './containers'
+import {HomeContainer, AboutContainer} from './containers'
 
 //when we're at our ./ react-router is bringing in this App
 // the IndexRoute is bringing in the homepage - so if no route is listed load the homepage

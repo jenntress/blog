@@ -9,8 +9,10 @@
 ### TO START CLIENT
 - Same as above, 1-except cd into client, 2-`npm start`
 
-### TASKS TO COMPLETE
-- I'm leaving "category" blank for now (not configuring yet except in Schema)
+### HOMEOWORK
+- components: ArticleList, PostArticle, EditArticle, ViewArticle
+- For each one of these we need a container and a component.
+- Article list container renders article list component that renders article card component. 
 
 ### LATEST CHANGES (AS OF 5/11/17)
 - delete files in src dir (everything except app.css. app.js, index.js)

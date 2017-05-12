@@ -10,13 +10,16 @@ import {Router,
 
 import App from './App';
 import {HomeContainer} from './containers'
+import {AboutContainer} from './containers'
 
 //when we're at our ./ react-router is bringing in this App
+// the IndexRoute is bringing in the homepage - so if no route is listed load the homepage
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <Route path="/home" component={HomeContainer} />
       <IndexRoute component={HomeContainer} />
+      <Route path="/home" component={HomeContainer} />
+      <Route path="/about" component={AboutContainer} />
     </Route>
   </Router>,
   document.getElementById('root')

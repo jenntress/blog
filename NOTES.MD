@@ -7,7 +7,7 @@
 1. Same instructions as above, except `npm run test`
 
 ### TO START CLIENT
-- Same as above, except cd into client, `npm start`
+- Same as above, 1-except cd into client, 2-`npm start`
 
 ### TASKS TO COMPLETE
 - I'm leaving "category" blank for now (not configuring yet except in Schema)
@@ -42,8 +42,9 @@ react-scripts-custom
 - Kill server, then ```npm run eject```, are you sure? Y (this dislocates it from its origin so that we can customize its webpack)
 - configure our build so we can use modulus css: client/config/webpack.config.dev.js
 
-GITHUB
-- AFTER you did this: `git checkout -b articles` and made changes to files, then
+GITHUB BRANCHING
+- Create a branch and get into it. `git checkout -b articles` - note that "articles" is the name of the new branch.
+- Make changes to files, then
  - `git add -A`
  - `git commit -m "some msg"`
  - `git push origin articles` -> Note you pushed to your new branch

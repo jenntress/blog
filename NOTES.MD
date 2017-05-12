@@ -1,4 +1,4 @@
-### TO START
+### TO START DATABASE AND USE POSTMAN
 1. (Cmder) start mongodb
 2. (new tab) connect to mongo
 3. (in same tab) ctrl + c, cd into main directory, `npm run start` (this uses nodemon from /bin/www to autoupdate)
@@ -6,15 +6,16 @@
 ### TO TEST
 1. Same instructions as above, except `npm run test`
 
-### LATEST CHANGES (AS OF 5/10/17)
-- created endpoints (DELETE/PUT)
-- refractored routes
-- updated articles.js to ES6
-- added test routes
-- installed mocha, chai, dotenv
+### TO START CLIENT
+- Same as above, except cd into client, `npm start`
 
 ### TASKS TO COMPLETE
 - I'm leaving "category" blank for now (not configuring yet except in Schema)
+
+### LATEST CHANGES (AS OF 5/11/17)
+- delete files in src dir (everything except app.css. app.js, index.js)
+- `npm install --save react-route@3`
+- make a route for /home and a route for container(smart) and components(stupid - just presentational) - browser loading at http://localhost:3000/home
 
 ### HOW-TO NOTES
 USING EXPRESS (bootstrap the backend)
@@ -31,6 +32,16 @@ MONGOOSE
 - We need to install mongoose for each project (no point in installing globally)
 - `npm install --save mongoose`
 
+react-scripts-custom
+- ```create-react-app client --scripts-version react-scripts-custom```
+- cd into the new client directory and ```npm install```
+- can do ```npm start``` at this point
+- documentation: https://www.npmjs.com/package/react-scripts-custom
+- If the above didn't work, do this instead: ```create-react-app client``` instead.
+- Test to see if it's working: cd into client, ```npm run start``` YAY!
+- Kill server, then ```npm run eject```, are you sure? Y (this dislocates it from its origin so that we can customize its webpack)
+- configure our build so we can use modulus css: client/config/webpack.config.dev.js
+
 GITHUB
 - AFTER you did this: `git checkout -b articles` and made changes to files, then
  - `git add -A`
@@ -41,7 +52,14 @@ GITHUB
  - `git push origin master` -> sync your master branch with new code
 
 
-### ARCHIVED CHANGES AS OF 5/9/17
+### ARCHIVED CHANGES
+AS OF 5/10/17
+- created endpoints (DELETE/PUT)
+- refractored routes
+- updated articles.js to ES6
+- added test routes
+- installed mocha, chai, dotenv
+AS OF 5/9/17
  - Today is the start of this new project!
  - Decided that my blog subject is Markdown Syntax
  - added a test endpoint to app.js

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "test": "NODE_ENV=test mocha --no-deprecation --sort --colors --inline-diffs --bail"
+    "test": "NODE_ENV=test mocha --no-deprecation --sort --inline-diffs --bail"
   },
   "dependencies": {
     "body-parser": "~1.17.1",

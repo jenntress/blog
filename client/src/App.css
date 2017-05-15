@@ -1,4 +1,8 @@
-.container {
-  background-color: red;
-  color: white;
+/* blog/client/src/App.css */
+
+@import url(https://fonts.googleapis.com/css?family=Rosarivo);
+
+body {
+  font-family: 'Rosarivo';
+  background-color: Gainsboro;
 }

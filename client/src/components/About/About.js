@@ -1,3 +1,5 @@
+//  blog/client/src/components/About/About.js
+
 import React from 'react'
 
 const About = (props) => {

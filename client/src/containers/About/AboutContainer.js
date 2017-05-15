@@ -1,7 +1,6 @@
-// blog/client/containers/Home/AboutContainer.js (smart components)
+// blog/client/containers/About/AboutContainer.js (smart components)
 
 import React, {Component} from 'react'
-
 import {About} from '../../components'
 
 class AboutContainer extends Component {

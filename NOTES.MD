@@ -1,23 +1,21 @@
-### TO START DATABASE AND USE POSTMAN
-1. (Cmder) start mongodb
-2. (new tab) connect to mongo
-3. (in same tab) ctrl + c, cd into main directory, `npm run start` (this uses nodemon from /bin/www to autoupdate)
+### TO START
+1. Start mongodb
+2. Connect to mongo, ctrl + c
+3. Run database in Postman: cd into main directory, `npm run start` (this uses nodemon from /bin/www to autoupdate). Open postman.
+4. Start API: cd into client, 2-`npm start`
 
-### TO TEST
-1. Same instructions as above, except `npm run test`
-
-### TO START CLIENT
-- Same as above, 1-except cd into client, 2-`npm start`
-
-### HOMEOWORK
+### HOMEWORK
 - components: ArticleList, PostArticle, EditArticle, ViewArticle
 - For each one of these we need a container and a component.
-- Article list container renders article list component that renders article card component. 
+- Article list container renders article list component that renders article card component.
 
-### LATEST CHANGES (AS OF 5/11/17)
-- delete files in src dir (everything except app.css. app.js, index.js)
-- `npm install --save react-route@3`
-- make a route for /home and a route for container(smart) and components(stupid - just presentational) - browser loading at http://localhost:3000/home
+### LATEST CHANGES (AS OF 5/15/17)
+- Tried to install bootstrap. Failed. See notes below.
+- Added NAV to HomeComponent temporarily to save some clicks in the address bar.
+- Added ArticleList component
+- Built ArticlesList to render each entry/article, but it's not working.
+  - error1: React.createElement invalid: check code at ArticleListContainer.js:27
+  - error2: Element type invalid: check render method of ArticlesListContainer.
 
 ### HOW-TO NOTES
 USING EXPRESS (bootstrap the backend)
@@ -25,6 +23,10 @@ USING EXPRESS (bootstrap the backend)
 - express nameOfApp `express blog` (note that we already installed express globally on this computer)
 - Delete any unnecessary things the generator created (views, public, routes)
 - documentation: https://expressjs.com/en/starter/generator.html
+
+BOOTSTRAP
+- I forget EVERY TIME!!!!!
+- npm installed react-bootstrap and bootstrap in both client and root. Got an error from react-overlay - tried to uninstall. Didn't work. Removed import/require from index.js, and all boostrap dependencies from package.json. Was hoping this documentation would help - but it did not. https://github.com/facebookincubator/create-react-app/issues/301
 
 IGNORE NODE MODULES
 - `echo node_modules/ >> .gitignore`
@@ -56,6 +58,10 @@ GITHUB BRANCHING
 
 
 ### ARCHIVED CHANGES
+AS OF 5/11/17
+- delete files in src dir (everything except app.css. app.js, index.js)
+- `npm install --save react-route@3`
+- make a route for /home and a route for container(smart) and components(stupid - just presentational) - browser loading at http://localhost:3000/home
 AS OF 5/10/17
 - created endpoints (DELETE/PUT)
 - refractored routes

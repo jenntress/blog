@@ -1,3 +1,5 @@
+/* blog/client/src/sharedStyles/styles.css */
+
 .button {
   border: solid 3px black;
   padding: 10px;
@@ -6,4 +8,25 @@
 .button:hover {
   border: solid 3px green;
   padding: 20px;
+}
+
+.container {
+  border: 3px solid black;
+  padding: 10px;
+  background-color: WhiteSmoke;
+}
+
+/* located at blog/client/src/containers/ArticleList/ArticleList.js */
+#items-box {
+  background-color: pink;
+  border: 5px dashed gray;
+}
+
+/*jnav located in blog/client/src/components/Home/Home.js */
+.jnav a {
+  margin: 10px;
+  padding: 10px 15px;
+	background: #4479BA;
+	color: #FFF;
+  text-decoration: none;
 }

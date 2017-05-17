@@ -11,15 +11,11 @@
 }
 
 .container {
-  border: 3px solid black;
+  border: 1px solid gray;
   padding: 10px;
   background-color: WhiteSmoke;
-}
-
-/* located at blog/client/src/containers/ArticleList/ArticleList.js */
-#items-box {
-  background-color: pink;
-  border: 5px dashed gray;
+  margin: 5px;
+  width: 90%;
 }
 
 /*jnav located in blog/client/src/components/Home/Home.js */

@@ -1,7 +1,7 @@
 ### TO START
 1. Start mongodb
 2. Connect to mongo, ctrl + c
-3. Run database in Postman: cd into main directory, `npm run start` (this uses nodemon from /bin/www to autoupdate). Open postman.
+3. Run database in Postman: cd into main directory, `npm run mon` (this uses nodemon from /bin/www to autoupdate). Open postman.
 4. Start API: cd into client, 2-`npm start`
 
 ### HOMEWORK
@@ -9,13 +9,10 @@
 - For each one of these we need a container and a component.
 - Article list container renders article list component that renders article card component.
 
-### LATEST CHANGES (AS OF 5/15/17)
-- Tried to install bootstrap. Failed. See notes below.
-- Added NAV to HomeComponent temporarily to save some clicks in the address bar.
-- Added ArticleList component
-- Built ArticlesList to render each entry/article, but it's not working.
-  - error1: React.createElement invalid: check code at ArticleListContainer.js:27
-  - error2: Element type invalid: check render method of ArticlesListContainer.
+### LATEST CHANGES
+- Replaced error handlers in App.js to remove "render"
+- installed foreman and created Profile.dev (doesn't work for windows)
+-
 
 ### HOW-TO NOTES
 USING EXPRESS (bootstrap the backend)
@@ -25,8 +22,10 @@ USING EXPRESS (bootstrap the backend)
 - documentation: https://expressjs.com/en/starter/generator.html
 
 BOOTSTRAP
-- I forget EVERY TIME!!!!!
-- npm installed react-bootstrap and bootstrap in both client and root. Got an error from react-overlay - tried to uninstall. Didn't work. Removed import/require from index.js, and all boostrap dependencies from package.json. Was hoping this documentation would help - but it did not. https://github.com/facebookincubator/create-react-app/issues/301
+- cd into client, `npm install --save bootstrap`
+- require it in the main index.js (the file that is the react brains)
+- `require('bootstrap/dist/css/bootstrap.css');`
+
 
 IGNORE NODE MODULES
 - `echo node_modules/ >> .gitignore`
@@ -58,17 +57,24 @@ GITHUB BRANCHING
 
 
 ### ARCHIVED CHANGES
-AS OF 5/11/17
+##### AS OF 5/15/17
+- Tried to install bootstrap. Failed. See notes below.
+- Added NAV to HomeComponent temporarily to save some clicks in the address bar.
+- Added ArticleList component
+- Built ArticlesList to render each entry/article, but it's not working.
+ - error1: React.createElement invalid: check code at ArticleListContainer.js:27
+ - error2: Element type invalid: check render method of ArticlesListContainer.
+##### AS OF 5/11/17
 - delete files in src dir (everything except app.css. app.js, index.js)
 - `npm install --save react-route@3`
 - make a route for /home and a route for container(smart) and components(stupid - just presentational) - browser loading at http://localhost:3000/home
-AS OF 5/10/17
+##### AS OF 5/10/17
 - created endpoints (DELETE/PUT)
 - refractored routes
 - updated articles.js to ES6
 - added test routes
 - installed mocha, chai, dotenv
-AS OF 5/9/17
+##### AS OF 5/9/17
  - Today is the start of this new project!
  - Decided that my blog subject is Markdown Syntax
  - added a test endpoint to app.js

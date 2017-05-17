@@ -3,8 +3,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+require('bootstrap/dist/css/bootstrap.css');
+
 import App from './App';
+// multiple imports work below because we're exporting them from index.js in containers folder
 import {HomeContainer, AboutContainer, ArticleListContainer} from './containers';
+
 
 //when we're at our ./ react-router is bringing in this App
 // the IndexRoute is bringing in the homepage - so if no route is listed load the homepage

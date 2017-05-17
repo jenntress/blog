@@ -2,31 +2,37 @@
 
 import React, {Component} from 'react';
 import $ from 'jquery';
-import ArticlesList from '../../components';
+import {ArticleList} from '../../components';
 
-class ArticlesListContainer extends Component {
+
+class ArticleListContainer extends Component {
   state = {
     articles: undefined
   }
 
-    componentDidMount = () => this.loadArticles()
+// react lifecycle component
+componentDidMount = () => this.loadArticles()
 
-    loadArticles(){
-      $.ajax({
-        url:'api/articles',
-        method: 'GET'
-      }).done((response) => {
-        this.setState({articles: response})
-  console.log(response);
-      })
-    }
+  loadArticles(){
+    $.ajax({
+      url: '/api/articles',
+      method: 'GET'
+    }).done((response) => {
+      this.setState({articles: response})
+    console.log(response);
+    })
+  }
 
-  render (){
+
+
+  render() {
     return (
-       <div>
-         {this.state.articles ? <ArticlesList articles={this.state.articles} /> : undefined}
-       </div>
-     );
-   }
+      <div>
+      <h2>Some stuff here - from the container</h2>
+       {this.state.articles ? <ArticleList articles={this.state.articles} /> : undefined}
+      </div>
+    )
+  }
 }
-export default ArticlesListContainer;
+
+export default ArticleListContainer;

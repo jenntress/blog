@@ -1,18 +1,20 @@
 //  blog/client/src/components/ArticleList/ArticleList.js
 
-import React from 'react'
+import React from 'react';
+import {container} from '../../sharedStyles/styles.css'
 
 const ArticlesList = (props) => (
-// note that I'm omitting the return and curly braces here.
-    <div id="items-box">
-      <h2>Hello, from the ArticleList component</h2>
+// note that I omitted the return and the curly braces here.
+    <div>
+      <h1>Some stuff here - from the component!</h1>
       {props.articles.map((item, index) => (
-        <div key={index}>
-          <h2>{item.title}</h2>
-          <p>{item.content}</p>
-        </div>
-      ))}
+      <div className={container} key={index}>
+        <h2>{item.title}</h2>
+        <p>{item.content}</p>
+      </div>
+    ))};
     </div>
 );
+
 
 export default ArticlesList;

@@ -12,6 +12,7 @@ const Home = (props) => {
            <a href="/">Home</a>
            <a href="/about">About</a>
            <a href="/articlelist">List of Entries</a>
+           <a href="/postarticle">Post New Article</a>
          </ul>
       </nav>
       <h1> Hello from Home Component!</h1>

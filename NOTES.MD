@@ -5,17 +5,17 @@
 4. Start API: cd into client, 2-`npm start`
 
 ### HOMEWORK
-- components: ArticleList, PostArticle, EditArticle, ViewArticle
-- For each one of these we need a container and a component.
-- Article list container renders article list component that renders article card component.
+- components: EditArticle, ViewArticle, DeleteArticle
+- Add navbar - navigation is getting annoying.
 
-### LATEST CHANGES
+### LATEST CHANGES (AS OF 5/16/17)
 - Replaced error handlers in App.js to remove "render"
 - installed foreman and created Profile.dev (doesn't work for windows)
--
+- Added proxy to package.json
+- Added POST to client
 
 ### HOW-TO NOTES
-USING EXPRESS (bootstrap the backend)
+USING EXPRESS "bootstrap the backend"
 - cd into directory
 - express nameOfApp `express blog` (note that we already installed express globally on this computer)
 - Delete any unnecessary things the generator created (views, public, routes)
@@ -25,6 +25,7 @@ BOOTSTRAP
 - cd into client, `npm install --save bootstrap`
 - require it in the main index.js (the file that is the react brains)
 - `require('bootstrap/dist/css/bootstrap.css');`
+- If that didn't work, add this to public/index.html  ```<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">```
 
 
 IGNORE NODE MODULES

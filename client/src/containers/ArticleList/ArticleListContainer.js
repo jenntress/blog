@@ -28,7 +28,6 @@ componentDidMount = () => this.loadArticles()
   render() {
     return (
       <div>
-      <h2>Some stuff here - from the container</h2>
        {this.state.articles ? <ArticleList articles={this.state.articles} /> : undefined}
       </div>
     )

@@ -5,16 +5,17 @@
 4. Start API: cd into client, 2-`npm start`
 
 ### HOMEWORK
-- components: EditArticle, ViewArticle, DeleteArticle
-- Add navbar - navigation is getting annoying.
+- components: ViewArticle, DeleteArticle
+-
 
-### LATEST CHANGES (AS OF 5/16/17)
-- Replaced error handlers in App.js to remove "render"
-- installed foreman and created Profile.dev (doesn't work for windows)
-- Added proxy to package.json
-- Added POST to client
+### LATEST CHANGES (AS OF 5/17/17)
+- installed faker!!!!!
+- changed favicon to R2D2
+- added Navbar - top of every page
+- added Edit article (PUT)
 
-### HOW-TO NOTES
+
+## HOW-TO NOTES
 USING EXPRESS "bootstrap the backend"
 - cd into directory
 - express nameOfApp `express blog` (note that we already installed express globally on this computer)
@@ -27,14 +28,25 @@ BOOTSTRAP
 - `require('bootstrap/dist/css/bootstrap.css');`
 - If that didn't work, add this to public/index.html  ```<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">```
 
-
 IGNORE NODE MODULES
 - `echo node_modules/ >> .gitignore`
 - (success is seeing a new blank file in directory)
 
+FAKER
+Adds generic data to our database. Note that we don't want this script to run every time we start our server. We'll add an envrioment variable that will tell us if we want to seed our data or not. Documentation: https://github.com/Marak/faker.js
+1. add database-seeder.js to the root config folder (using the .env file)
+2. npm install --save-dev faker (only use for development)
+3. Make sure faker is working. Test by model.exports and let title - faker.random.words(); then console log this title. Once we know faker is working...
+4. Add a remove function to get rid of all entries in the database and replace them with 20 new ones with an 'if' statement.
+5. Turn .env to false - because now we gots some content in our database!
+6. Now DELETE or COMMENT OUT the if statement in the app.js before commiting to github.
+
 MONGOOSE
 - We need to install mongoose for each project (no point in installing globally)
 - `npm install --save mongoose`
+
+FAVICON
+- just replace the one in public folder with a new one. SO EASY!
 
 react-scripts-custom
 - ```create-react-app client --scripts-version react-scripts-custom```
@@ -58,6 +70,11 @@ GITHUB BRANCHING
 
 
 ### ARCHIVED CHANGES
+##### AS OF 5/16/17
+- Replaced error handlers in App.js to remove "render"
+- installed foreman and created Profile.dev (doesn't work for windows)
+- Added proxy to package.json
+- Added POST to client
 ##### AS OF 5/15/17
 - Tried to install bootstrap. Failed. See notes below.
 - Added NAV to HomeComponent temporarily to save some clicks in the address bar.

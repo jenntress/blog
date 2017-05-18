@@ -1,4 +1,4 @@
-// blog/client/containers/PostArticle/PostArticleContainer.js
+// blog/client/src/containers/PostArticle/PostArticleContainer.js
 
 import React, {Component} from 'react';
 import {PostArticle} from '../../components'; //this is the presentational file

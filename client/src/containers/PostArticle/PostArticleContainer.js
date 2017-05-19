@@ -8,8 +8,27 @@ import { browserHistory } from 'react-router';
 class PostArticleContainer extends Component {  //set the state
   state={
     title: undefined,
-    content: undefined
+    content: undefined,
+    valid: false
   }
+
+    updateField(name, value){
+      const newState={};
+      newState[name]=value;
+      this.setState(newState);
+    }
+    // updateTitle=(event) => this.setState({title: event.target.value})
+    // updateContent=(event) => this.setState({content: event.target.value})
+    onChange = this.onChange.bind(this);
+    onChange(name, value){
+      this.updateField(name, value);
+      this.validate();
+    }
+    validate(){
+      this.setState({
+        valid: (this.state.title !== undefined) && (this.state.content !== undefined)
+      })
+    }
 
   handleSubmit = this.handleSubmit.bind(this)
   handleSubmit(event){
@@ -31,16 +50,14 @@ console.log(blurb);
     })
  }
 
- updateTitle=(event) => this.setState({title: event.target.value})
- updateContent=(event) => this.setState({content: event.target.value})
 
   render (){
     return (
       <div>
         <PostArticle
            handleSubmit={this.handleSubmit}
-           updateTitle={this.updateTitle}
-           updateContent={this.updateContent}
+           onChange={this.onChange}
+           valid={this.state.valid}
         />
       </div>
     )

@@ -22,7 +22,7 @@ const EditArticle = (props) => (
         />
       </div>
 
-      <button type="submit" className="btn btn-default">Save</button>
+      <button type="submit" className="btn btn-success">Save</button>
       <Link className="btn btn-default" to="/articlelist">Back to Articles</Link>
     </form>
   </div>

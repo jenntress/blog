@@ -5,14 +5,17 @@
 4. Start API: cd into client, 2-`npm start`
 
 ### HOMEWORK
-- components: ViewArticle, DeleteArticle
+- components: DeleteArticle
+- get buttons to work on the ViewArticle
+- route to articles after newpost article or delete article
 -
+- show most recent post on the main page
+- post date
 
-### LATEST CHANGES (AS OF 5/17/17)
-- installed faker!!!!!
-- changed favicon to R2D2
-- added Navbar - top of every page
-- added Edit article (PUT)
+### LATEST CHANGES (AS OF 5/18/17)
+- added delete method
+- added reverse method to array (to show most recent articles first)
+- added ViewArticle page to client
 
 
 ## HOW-TO NOTES
@@ -32,7 +35,7 @@ IGNORE NODE MODULES
 - `echo node_modules/ >> .gitignore`
 - (success is seeing a new blank file in directory)
 
-FAKER
+FAKER "seed the database"
 Adds generic data to our database. Note that we don't want this script to run every time we start our server. We'll add an envrioment variable that will tell us if we want to seed our data or not. Documentation: https://github.com/Marak/faker.js
 1. add database-seeder.js to the root config folder (using the .env file)
 2. npm install --save-dev faker (only use for development)
@@ -70,6 +73,11 @@ GITHUB BRANCHING
 
 
 ### ARCHIVED CHANGES
+##### AS OF 5/17/17
+- installed faker!!!!!
+- changed favicon to R2D2
+- added Navbar - top of every page
+- added Edit article (PUT) TO client
 ##### AS OF 5/16/17
 - Replaced error handlers in App.js to remove "render"
 - installed foreman and created Profile.dev (doesn't work for windows)

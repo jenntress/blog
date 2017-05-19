@@ -7,7 +7,7 @@ require('bootstrap/dist/css/bootstrap.css'); // need to call here AND in public/
 
 import App from './App';
 // multiple imports work below because we're exporting them from index.js in containers folder
-import {HomeContainer, AboutContainer, EditArticleContainer, PostArticleContainer, ArticleListContainer} from './containers';
+import {HomeContainer, AboutContainer, ViewArticleContainer, EditArticleContainer, PostArticleContainer, ArticleListContainer} from './containers';
 
 
 //when we're at our ./ react-router is bringing in this App
@@ -20,7 +20,8 @@ ReactDOM.render(
       <Route path="/about" component={AboutContainer} />
       <Route path="/articlelist" component={ArticleListContainer} />
       <Route path="/postarticle" component={PostArticleContainer} />
-       <Route path="/articlelist/edit/:articleId" component={EditArticleContainer}/>
+      <Route path="/viewarticle/:articleId" component={ViewArticleContainer} />
+      <Route path="/articlelist/edit/:articleId" component={EditArticleContainer}/>
     </Route>
   </Router>,
   document.getElementById('root')

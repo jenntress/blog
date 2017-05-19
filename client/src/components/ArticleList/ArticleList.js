@@ -13,7 +13,9 @@ const ArticlesList = (props) => (
         <h2>{item.title}</h2>
         <p>{item.content}</p>
         <br />
+        <Link className="btn btn-default" to={`/viewarticle/${item._id}`}>View</Link>
         <Link className="btn btn-success" to={`/articlelist/edit/${item._id}`}>Edit</Link>
+        <Link className="btn btn-danger" to={`/articlelist/delete/${item._id}`}>Delete</Link>
       </div>
     ))};
     </div>

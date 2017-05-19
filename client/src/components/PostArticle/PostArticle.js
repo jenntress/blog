@@ -7,10 +7,11 @@ const PostArticle = (props) => (
     <form onSubmit={(event) => props.handleSubmit(event)}>
       <h3>Add a New Article</h3>
        <input type="text" placeholder="title of article"
-         onChange={(event) => props.updateTitle(event)}/>
+         onChange={(event) => props.onChange("title", event.target.value)}/>
        <input type="text" placeholder="article content"
-         onChange={(event) => props.updateContent(event)}/>
-    <button type="submit" className="btn btn-default">Post</button>
+         onChange={(event) => props.onChange("content", event.target.value)}/>
+         <br />
+    <button disabled={!props.valid} type="submit" className="btn btn-success">Post</button>
    </form>
   </div>
 )

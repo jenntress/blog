@@ -41,7 +41,10 @@ exports.removeArticle = (req, res) => {
     if(err){
       console.log(err)
     }else{
-      res.send("article successfully removed!")
+      Article.find(function(err, articles){
+        if (err) res.json({error: err});//gives us an object to play with if it doesn't work.
+                 res.send({message:"article successfully removed!", data: articles});
+      });
     }
   });
 };

@@ -1,4 +1,4 @@
-// blog/client/src/containers/ViewArticle/ViewArticleContainer.js
+// blog/client/src/containers/EditArticle/EditArticleContainer.js
 
 import React, { Component } from 'react';
 import $ from 'jquery';
@@ -27,7 +27,7 @@ class EditArticleContainer extends Component {
       url:`/api/articles/${this.props.params.articleId}`,
       method: 'GET'
     }).done(response => {
-   console.log(response, "CURRENT ARTICLES");
+   console.log("THIS CURRENT ARTICLE", response);
       this.setState({
         title: response.title,
         content: response.content,
@@ -50,7 +50,7 @@ class EditArticleContainer extends Component {
       method: 'PUT',
       data: data
     }).done(response => {
-       console.log(response);
+       console.log("HERE US THE DATA THAT GOT UPDATED", response);
       })
   }
 

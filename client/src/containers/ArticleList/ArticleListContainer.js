@@ -10,25 +10,38 @@ class ArticleListContainer extends Component {
     articles: undefined
   }
 
-// react lifecycle component
-componentDidMount = () => this.loadArticles()
+componentDidMount = () => this.loadArticles()// react lifecycle component
 
   loadArticles(){
     $.ajax({
       url: '/api/articles',
       method: 'GET'
     }).done((response) => {
-      this.setState({articles: response})
-    console.log(response);
-    })
+    console.log(response[2]); //log the third object in my database
+      this.setState({articles: response});
+   });
   }
+
+deleteById = this.deleteById.bind(this)
+
+ deleteById(event, _id){
+ event.preventDefault();
+    $.ajax({
+      url: `/api/articles/${_id}`,
+      method: 'DELETE'
+    }).done((response) => this.setState({articles: response.data}))
+ }
+
 
 
 
   render() {
     return (
       <div>
-       {this.state.articles ? <ArticleList articles={this.state.articles} /> : undefined}
+       {this.state.articles ?
+         <ArticleList articles={this.state.articles}
+                      deleteById={this.deleteById}
+        /> : undefined}
       </div>
     )
   }

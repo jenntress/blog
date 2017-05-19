@@ -18,7 +18,7 @@
   width: 90%;
 }
 
-/*jnav located in blog/client/src/components/Home/Home.js */
+/*jnav located in blog/client/src/NavBar.js */
 .jnav a {
   margin: 10px;
   padding: 10px 15px;

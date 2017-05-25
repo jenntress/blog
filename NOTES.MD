@@ -5,18 +5,13 @@
 4. Start API: cd into client, 2-`npm start`
 
 ### HOMEWORK
-- components: DeleteArticle
-- get buttons to work on the ViewArticle
-- route to articles after newpost article or delete article
--
-- show most recent post on the main page
-- post date
-
-### LATEST CHANGES (AS OF 5/18/17)
-- added delete method
-- added reverse method to array (to show most recent articles first)
-- added ViewArticle page to client
-
+- (BROKEN) .populate & .exec - not sure if working. Brain has shutdown.
+- (BROKEN) Edit button on ViewArticle page
+- (NEW) Create client side (show all comments on each article)
+- (OPTIONAL) add reverse method to array (to show most recent  articles first)
+- (OPTIONAL) route to articles after newpost or delete
+- (OPTIONAL) show most recent post on the main page
+- (LATER) show post date
 
 ## HOW-TO NOTES
 USING EXPRESS "bootstrap the backend"
@@ -29,20 +24,21 @@ BOOTSTRAP
 - cd into client, `npm install --save bootstrap`
 - require it in the main index.js (the file that is the react brains)
 - `require('bootstrap/dist/css/bootstrap.css');`
-- If that didn't work, add this to public/index.html  ```<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">```
+- If that didn't work, add this to public/index.html  `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">`
 
 IGNORE NODE MODULES
-- `echo node_modules/ >> .gitignore`
+- cd into main directory, `echo node_modules/ >> .gitignore`
 - (success is seeing a new blank file in directory)
+- ignore .env because it stores API keys (ex.gmail/amazon - users can use their logins - need to keep them private) add ".env" to your .gitignore file
 
 FAKER "seed the database"
 Adds generic data to our database. Note that we don't want this script to run every time we start our server. We'll add an envrioment variable that will tell us if we want to seed our data or not. Documentation: https://github.com/Marak/faker.js
 1. add database-seeder.js to the root config folder (using the .env file)
-2. npm install --save-dev faker (only use for development)
+2. `npm install --save-dev faker` (only use for development)
 3. Make sure faker is working. Test by model.exports and let title - faker.random.words(); then console log this title. Once we know faker is working...
 4. Add a remove function to get rid of all entries in the database and replace them with 20 new ones with an 'if' statement.
 5. Turn .env to false - because now we gots some content in our database!
-6. Now DELETE or COMMENT OUT the if statement in the app.js before commiting to github.
+6. Now DELETE or COMMENT OUT the 'if' statement in the app.js before commiting to github.
 
 MONGOOSE
 - We need to install mongoose for each project (no point in installing globally)
@@ -71,8 +67,19 @@ GITHUB BRANCHING
  - `git merge articles` -> brings your new code into articles
  - `git push origin master` -> sync your master branch with new code
 
+ FOLDER ROUTING
+ - to go up one whole folder use ..
 
-### ARCHIVED CHANGES
+### SUMMARY OF CHANGES
+##### AS OF 5/25/17
+-
+-
+##### AS OF 5/24/17
+- added comment model and API endpoint (backend)
+- fixed delete method on client side (moved button to ViewArticle)
+- updated README with phase 3
+##### AS OF 5/18/17
+- added ViewArticle page to client
 ##### AS OF 5/17/17
 - installed faker!!!!!
 - changed favicon to R2D2

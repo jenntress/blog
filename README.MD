@@ -42,7 +42,7 @@ GETbyID - to view one specific article, go to
 **Pages**
 - Home
 - Blog
-  - Articles List
+  - Articles Lists
   - View Articles
   - Edit Articles
 - Contact
@@ -56,6 +56,14 @@ GETbyID - to view one specific article, go to
 - Create function React App
 - Implement Router, to get to each one of your "container" comps
 - Implement client side CRUD for Articles
+
+### Phase Three
+* Create Model Comment with field content
+* Add Comment relationship to Article
+* Implement API endpoint to create Comment on Article.
+  *  make sure you populate the comment, on Article
+* Implement Client side ability to view comments for an article.
+* Implement Client side ability to post comment on an article.
 
 ### Project Roadmap
 - Seed Dev DB with fake data using

@@ -13,4 +13,5 @@ module.exports = (app) => {
   app.post('/api/articles', ArticleRoutes.createArticle);
   app.delete('/api/articles/:article_id', ArticleRoutes.removeArticle);
   app.put('/api/articles/:article_id', ArticleRoutes.updateArticle);
+  app.post('/api/articles/comment/:article_id', ArticleRoutes.makeComment);
 }

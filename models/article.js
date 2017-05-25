@@ -6,7 +6,8 @@ var mongoose = require('mongoose');
 var ArticleSchema = new mongoose.Schema({
     title: { required: true, type: String },
     content: String,
-    category: String
+    category: String,
+    comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 });
 
 ArticleSchema.methods.loadData = function(data){

@@ -12,9 +12,12 @@ class ViewArticleContainer extends Component {
     content: undefined
   }
 
-componentDidMount = () => this.loadArticles()// react lifecycle component
+deleteArticle = this.deleteArticle.bind(this)
+loadArticle = this.loadArticle.bind(this)
 
-  loadArticles(){
+componentDidMount = () => this.loadArticle()// react lifecycle component
+
+  loadArticle(){
 //    console.log(this.props);
     $.ajax({
       url: `/api/articles/${this.props.params.articleId}`,
@@ -29,12 +32,22 @@ componentDidMount = () => this.loadArticles()// react lifecycle component
   }
 
 
+deleteArticle(){
+  $.ajax({
+    url: `/api/articles/${this.props.params.articleId}`,
+    method: 'DELETE'
+  }).done((response) => {
+    console.log(response)
+  })
+}
+
   render() {
     return (
       <div>
         { this.state.isFetching ?
           <ViewArticle
             handleSubmit={this.handleSubmit}
+            deleteArticle={this.deleteArticle}
             title={this.state.title}
             content={this.state.content}
             /> : <h3>Loading...</h3>

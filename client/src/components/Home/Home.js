@@ -8,6 +8,8 @@ const Home = (props) => {
   return (
     <div className={container}>
       <h1> Hello from Home Component!</h1>
+       <h3>{props.title}</h3>
+       <p>{props.content}</p>
       <button
         onClick={() => alert('coolest btn everrr')}
         className={LargeButton} type='button'>Click me!</button>

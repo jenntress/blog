@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CommentSchema = new Schema({
-  content: {required: true, type: String}
+  content: {type: String}
 });
 
 CommentSchema.methods.loadData = function(data){

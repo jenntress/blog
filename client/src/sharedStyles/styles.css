@@ -18,6 +18,18 @@
   width: 90%;
 }
 
+.commentscontainer {
+  margin-top: 10px;
+  border-top: 1px solid gray;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  background-color: papayawhip;
+}
+.commentscontainer p {
+  list-style:disc outside none;
+  display:list-item;
+}
+
 /*jnav located in blog/client/src/NavBar.js */
 .jnav a {
   margin: 10px;

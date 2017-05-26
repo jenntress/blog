@@ -17,8 +17,8 @@ componentDidMount = () => this.loadArticles()// react lifecycle component
       url: '/api/articles',
       method: 'GET'
     }).done((response) => {
-    console.log(response[2]); //log the third object in my database
-      this.setState({articles: response});
+    console.log(response); //log the third object in my database
+      this.setState({articles: response.data});
    });
   }
 

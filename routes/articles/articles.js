@@ -3,27 +3,25 @@
 var Article = require('../../models/article');
 var Comment = require('../../models/comment');
 
-//******* GET ********
-exports.getAll = (req, res) => { //exporting this out to our index
-   Article.find(function(err,data){
-     if(err){
-       console.log(err);
-     }else {
-       res.json(data);
-     }
-   });
-};
+//******* GET ******** exporting this out to our index
+exports.getAll = (req, res) => {
+   Article.find()
+          .populate('comments')
+          .exec((err,data) => {
+     if(err) throw err;
+     res.send({data})
+   })
+}
 
 //****** GET by ID *****
 exports.getByID = (req, res) => {
-  Article.findById(req.params.article_id, function(err, data){
-    if(err){
-      console.log(err);
-    }else{
-      res.json(data);
-    }
-  });
-};
+  Article.findById(req.params.article_id)
+    .populate('comments')
+    .exec((err, data) => {
+      if(err) throw err;
+       res.send({data: data, message: "Found your article!"})
+    })
+}
 
 
 //**** comments ******
@@ -33,9 +31,9 @@ exports.makeComment = (req, res) => {
      if(err) throw err;
      const newComment = new Comment(); //need to create/save a comment to get an Id
      newComment.loadData(req.body); //there's the load method we defined earlier
-     newComment.save((err, savedNote) => { //change the comment of the comment AFTER save
+     newComment.save((err, savedComment) => { //change the comment of the comment AFTER save
        if(err) throw err;
-       arty.comments.push(savedNote);//if we pass this a comment object, it will go for THAT Id
+       arty.comments.push(savedComment);//if we pass this a comment object, it will go for THAT Id
        arty.save((err, savedArticle) => { //created this "new saved comment" in this function
          if(err) throw err;
          res.send({date: savedArticle})

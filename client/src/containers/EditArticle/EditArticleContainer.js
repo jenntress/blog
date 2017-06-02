@@ -7,7 +7,7 @@ import {EditArticle} from '../../components';
 
 class EditArticleContainer extends Component {
   state = {
-    isFetching: true,
+    isFetching: false,
     title: undefined,
     content: undefined
   }
@@ -27,11 +27,11 @@ class EditArticleContainer extends Component {
       url:`/api/articles/${this.props.params.articleId}`,
       method: 'GET'
     }).done(response => {
-   console.log("THIS CURRENT ARTICLE", response);
+//   console.log("THIS CURRENT ARTICLE", response);
       this.setState({
-        title: response.title,
-        content: response.content,
-        isFetching: false
+        title: response.data.title,
+        content: response.data.content,
+        isFetching: true
       });
     })
   }
@@ -42,7 +42,7 @@ class EditArticleContainer extends Component {
       title: this.state.title,
       content: this.state.content
     }
-  console.log("HERE IS THE DATA TO EDIT", data)
+    //  console.log("HERE IS THE DATA TO EDIT", data)
 
     //****This is the PUT ajax******
     $.ajax({
@@ -58,7 +58,7 @@ class EditArticleContainer extends Component {
     render() {
       return (
         <div>
-          { !this.state.isFetching ?
+          { this.state.isFetching ?
             <EditArticle
               handleSubmit={this.handleSubmit}
               updateField={this.updateField}

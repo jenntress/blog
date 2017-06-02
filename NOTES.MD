@@ -1,21 +1,35 @@
 # blog
 
-## TO START
+## TO START - Cmder
 1. Start mongodb
-2. Connect to mongo, ctrl + c
+2. New tab, Connect to mongo, ctrl + c
 3. Run database in Postman: cd into main directory, `npm run mon` (this uses nodemon from /bin/www to autoupdate). Open postman.
-4. Start API: cd into client, 2-`npm start`
+4. New tab, Start API: cd into client, 2-`npm start`
 
 ## HOMEWORK
-- (NEW) Add new comments: make a commentformcontainer that all it does is dispaly a comment form component. no function no calls no state
-- (OPTIONAL) add reverse method to array (to show most recent  articles first)
+This project is due: June 8th
+- (NEW) Get all the rest of the forms working - single files in userAuth
+- (FIX) Add new comments: make a commentformcontainer that all it does is dispaly a comment form component. no function no calls no state
+- (OPTIONAL) add reverse method to array (to show most recent articles first)
 - (OPTIONAL) route to articles after newpost or delete
 - (OPTIONAL) show most recent post on the main page
 - (LATER) show post date
 
+## POSTMAN SPECIFICS
+- POST a new comment - route is comment/Id
+http://localhost:3001/api/articles/comment/591cfda82748b90fd4c5949c
+Body: key is "content", value is your text comment.
+
 ## SUMMARY OF CHANGES
-##### AS OF
+##### AS OF 6/1/17
+- add dependencies from the package.json in our auth project
+  `npm install --save bcrypt-nodejs express-session passport passport-local`
+- add passport config code to our config folder>passport.js
+- main "server app js" import stuff, add passport.js, user.js, auth.js
 -
+##### AS OF 5/26/17
+- added "required" back to the comment schema
+- fixed edit article (now loads current fields) needed 'data' to response.data.title
 ##### AS OF 5/25/17
 - added .populate and .exec on BOTH GETs in the articles backend route
 - Created client side - show all comments on each article

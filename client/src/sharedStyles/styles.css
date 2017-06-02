@@ -13,21 +13,22 @@
 .container {
   border: 1px solid gray;
   padding: 10px;
-  background-color: WhiteSmoke;
+  background-color: papayawhip;
   margin: 5px;
   width: 90%;
 }
 
 .commentscontainer {
   margin-top: 10px;
-  border-top: 1px solid gray;
-  padding-left: 20px;
-  padding-bottom: 20px;
-  background-color: papayawhip;
+  border: 1px solid gray;
+  padding: 20px;
+  background-color: WhiteSmoke;
 }
 .commentscontainer p {
   list-style:disc outside none;
   display:list-item;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
 /*jnav located in blog/client/src/NavBar.js */

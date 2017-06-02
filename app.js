@@ -8,7 +8,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
+var session = require('express-session');
+var passport = require('passport');
 require('./config/database-connection')(); //mongoose is configured at this location instead of inside this app.js
+
 
 //need to wrap this seeder in an if statement because it's checking true or false.
 // we NEVER upload .env stuff to github - DELETE or COMMENT OUT!!!
@@ -34,12 +37,19 @@ app.get('/test', function(req,res){
 });
 
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+app.use(session({
+ secret: 'blahblahblah'
+})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(session({
+ cookie: {
+   maxAge: 60000
+ }
+}));
+require('./config/passport')(passport); // pass passport for configuration
+require('./routes/auth')(app, passport); // load our routes and pass in our app and fully configured passport
+
 
 // development error handler
 // will print stacktrace
@@ -52,6 +62,13 @@ if (app.get('env') === 'development') {
       })
   });
 }
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
 // production error handler
 // no stacktraces leaked to user

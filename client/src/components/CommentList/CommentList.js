@@ -5,14 +5,13 @@ import React from 'react';
 const CommentsList = (props) => (
 
   <div>
-  <h3>Comments</h3>
     { props.comments.length > 0 ? props.comments.map((item, index) => (
         <div key={index}>
           <p>{item.content}</p>
         </div>
-      )): <p>Be the first to leave a comment!</p>
+      )): <p>No comments yet! Submit one up there ^</p>
     }
   </div>
 )
 
-export default CommentsList
+export default CommentsList;

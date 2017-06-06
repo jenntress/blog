@@ -8,11 +8,11 @@
 
 ## HOMEWORK
 This project is due: June 8th
-- (BROKEN) Add a new comment from the client side (STATE IS NOT WORKING)
-- (BROKEN) Signup in postman error "missing credentials"
-- (BROKEN) Signup (create new account from client side)
+- (ERROR) Route error after successful login (does not route to ShowUser)
+- (HOW-TO) Add "if" function for login/logout Navbar button??
 - (BROKEN) add reverse method to array (to show most recent articles first)
-- (OPTIONAL) show most recent post on the main page
+- (BROKEN) use body font from App.css - do I have to import on every component?
+- (LATER) show most recent post on the main page
 - (LATER) show post date
 
 ## POSTMAN SPECIFICS
@@ -21,6 +21,12 @@ http://localhost:3001/api/articles/comment/591cfda82748b90fd4c5949c
 Body: key is "content", value is your text comment.
 
 ## SUMMARY OF CHANGES
+#### AS OF 6/6/17
+- Fixed 'add new comment' - client side! (define 'comment' in the state)
+- Fixed server side signup (know how to use postman Jenn! x-www-form...)
+- All auth.js routes work in Postman!
+- Client side signup works! (create a new user from localhost:3000)
+- Client side login works - with re-route error?
 #### AS OF 6/5/17
 - Added my picture to the homepage
 - Added browser routes - to redirect to articlelist after post & delete

@@ -11,8 +11,9 @@ const NavigationBar = () =>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/articlelist">Articles</Link>
-        <Link to="/postarticle">Add New</Link>
+        <Link to="/postarticle">Post New</Link>
         <Link to="/signup">Sign Up</Link>
+        <Link to="/login">Log In</Link>
       </ul>
   </nav>
 

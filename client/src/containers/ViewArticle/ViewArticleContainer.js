@@ -14,7 +14,8 @@ class ViewArticleContainer extends Component {
     id: undefined,
     title: undefined,
     content: undefined,
-    comments: undefined
+    comments: undefined,
+    comment: undefined
   }
 
 //show instantly when we type in the field in the browser
@@ -46,18 +47,19 @@ componentDidMount = () => this.loadArticle()// react lifecycle component
 updateText = (event) => this.setState({comment: event.target.value})
   submitComment(event, _id){
     event.preventDefault();
-    if(!this.state.text || this.state.text.length < 1){//prevents server crash from blank comments
+    console.log("THE COMMENT!", this.state.comment);
+    if(!this.state.comment || this.state.comment.length < 1){//prevents server crash from blank comments
       alert("type in the box first")
       return
     }
-    let newComment = {content: this.state.text}//just a temp variable to pass below
+    let newComment = {content: this.state.comment}//just a temp variable to pass below
     $.ajax({
-      url: `api/articles/comment/${_id}`,
+      url: `/api/articles/comment/${_id}`, //you will get a 404 if you have the wrong end point - remember the first slash!
       method: 'POST',
       data: newComment
     }).done((response) => {
       console.log("HERE IS THE NEW COMMENT", response);
-      this.setState({text: ""})
+      this.setState({comment: ""})
       this.loadArticle()
     })
   }
@@ -80,8 +82,8 @@ deleteArticle(){
         { this.state.isFetching ?
           <ViewArticle
             deleteArticle={this.deleteArticle}
-            updateText={this.state.updateText}
-            submitComment={this.state.submitComment}
+            updateText={this.updateText}
+            submitComment={this.submitComment}
             id={this.state.id}
             title={this.state.title}
             content={this.state.content}

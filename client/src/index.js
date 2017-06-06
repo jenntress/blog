@@ -11,6 +11,8 @@ import {HomeContainer, AboutContainer, ViewArticleContainer, EditArticleContaine
 
 //note that we're using two different import strategies (compare to above)
 import SignUpContainer from './userAuth/SignUpContainer'; //the smart one returns the dumb one
+import LoginContainer from './userAuth/LoginContainer';
+import ShowLoginContainer from './userAuth/ShowLoginContainer';
 
 //when we're at our ./ react-router is bringing in this App
 // the IndexRoute is bringing in the homepage - so if no route is listed load the homepage
@@ -25,6 +27,8 @@ ReactDOM.render(
       <Route path="/viewarticle/:articleId" component={ViewArticleContainer} />
       <Route path="/articlelist/edit/:articleId" component={EditArticleContainer}/>
       <Route path="/signup" component={SignUpContainer}/>
+      <Route path="/login" component={LoginContainer}/>
+      <Route path='/show' components={ShowLoginContainer}/>
     </Route>
   </Router>,
   document.getElementById('root')

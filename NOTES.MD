@@ -8,10 +8,10 @@
 
 ## HOMEWORK
 This project is due: June 8th
-- (NEW) Get all the rest of the forms working - single files in userAuth
-- (FIX) Add new comments: make a commentformcontainer that all it does is dispaly a comment form component. no function no calls no state
-- (OPTIONAL) add reverse method to array (to show most recent articles first)
-- (OPTIONAL) route to articles after newpost or delete
+- (BROKEN) Add a new comment from the client side (STATE IS NOT WORKING)
+- (BROKEN) Signup in postman error "missing credentials"
+- (BROKEN) Signup (create new account from client side)
+- (BROKEN) add reverse method to array (to show most recent articles first)
 - (OPTIONAL) show most recent post on the main page
 - (LATER) show post date
 
@@ -21,12 +21,16 @@ http://localhost:3001/api/articles/comment/591cfda82748b90fd4c5949c
 Body: key is "content", value is your text comment.
 
 ## SUMMARY OF CHANGES
+#### AS OF 6/5/17
+- Added my picture to the homepage
+- Added browser routes - to redirect to articlelist after post & delete
+- Added some style to the containers
+- TRIED to fix add new comment and signup on backend
 ##### AS OF 6/1/17
 - add dependencies from the package.json in our auth project
   `npm install --save bcrypt-nodejs express-session passport passport-local`
 - add passport config code to our config folder>passport.js
 - main "server app js" import stuff, add passport.js, user.js, auth.js
--
 ##### AS OF 5/26/17
 - added "required" back to the comment schema
 - fixed edit article (now loads current fields) needed 'data' to response.data.title

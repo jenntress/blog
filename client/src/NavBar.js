@@ -12,6 +12,7 @@ const NavigationBar = () =>
         <Link to="/about">About</Link>
         <Link to="/articlelist">Articles</Link>
         <Link to="/postarticle">Add New</Link>
+        <Link to="/signup">Sign Up</Link>
       </ul>
   </nav>
 

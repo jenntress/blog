@@ -27,7 +27,7 @@ class EditArticleContainer extends Component {
       url:`/api/articles/${this.props.params.articleId}`,
       method: 'GET'
     }).done(response => {
-//   console.log("THIS CURRENT ARTICLE", response);
+     // console.log("THIS CURRENT ARTICLE", response);
       this.setState({
         title: response.data.title,
         content: response.data.content,

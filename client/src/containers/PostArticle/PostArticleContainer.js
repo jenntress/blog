@@ -46,7 +46,7 @@ console.log(blurb);
       data: blurb
     }).done((response) => {
       console.log(response)
-      browserHistory.push('/articles')
+      browserHistory.push('/articlelist')
     })
  }
 

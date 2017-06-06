@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
 import {ViewArticle} from '../../components';
+import { browserHistory } from 'react-router';
 
 
 class ViewArticleContainer extends Component {
@@ -37,30 +38,30 @@ componentDidMount = () => this.loadArticle()// react lifecycle component
         comments: response.data.comments,
         isFetching: true
       });
-       //      console.log("THESE ARE MY COMMENTS", this.state.comments)
+       console.log("THESE ARE MY COMMENTS", this.state.comments)
     });
   }
 
+//********COMMENTS SECTION**********
 updateText = (event) => this.setState({comment: event.target.value})
-
   submitComment(event, _id){
     event.preventDefault();
     if(!this.state.text || this.state.text.length < 1){//prevents server crash from blank comments
       alert("type in the box first")
       return
     }
-    let newComment = {comment: this.state.text}//just a temp variable to pass below
+    let newComment = {content: this.state.text}//just a temp variable to pass below
     $.ajax({
-      url: `api/articles/comment${_id}`,
+      url: `api/articles/comment/${_id}`,
       method: 'POST',
       data: newComment
     }).done((response) => {
       console.log("HERE IS THE NEW COMMENT", response);
       this.setState({text: ""})
-      this.loadHeroes()
-
+      this.loadArticle()
     })
   }
+
 
 
 deleteArticle(){
@@ -69,6 +70,7 @@ deleteArticle(){
     method: 'DELETE'
   }).done((response) => {
     console.log(response)
+    browserHistory.push('/articlelist')
   })
 }
 
@@ -77,14 +79,13 @@ deleteArticle(){
       <div>
         { this.state.isFetching ?
           <ViewArticle
-            handleSubmit={this.handleSubmit}
             deleteArticle={this.deleteArticle}
-            updateText={this.updateText}
+            updateText={this.state.updateText}
+            submitComment={this.state.submitComment}
             id={this.state.id}
             title={this.state.title}
             content={this.state.content}
             comments={this.state.comments}
-
             /> : <h3>Loading...</h3>
         }
       </div>

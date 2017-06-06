@@ -1,28 +1,28 @@
 /* blog/client/src/sharedStyles/styles.css */
 
-.button {
-  border: solid 3px black;
-  padding: 10px;
-}
-
-.button:hover {
-  border: solid 3px green;
-  padding: 20px;
-}
 
 .container {
   border: 1px solid gray;
+  border-radius: 5px;
   padding: 10px;
-  background-color: papayawhip;
+  background-color: WhiteSmoke;
   margin: 5px;
   width: 90%;
+  box-shadow:inset 0px 0px 25px rgba(0,0,0,.15);
+}
+
+.homeimg {
+  float: right;
+  height: 300px;
+  margin-top: -40px;
 }
 
 .commentscontainer {
   margin-top: 10px;
   border: 1px solid gray;
+  border-radius: 3px;
   padding: 20px;
-  background-color: WhiteSmoke;
+  background-color: papayawhip;
 }
 .commentscontainer p {
   list-style:disc outside none;
@@ -38,4 +38,8 @@
 	background: #4479BA;
 	color: #FFF;
   text-decoration: none;
+}
+
+.jnav {
+  margin-top: 20px;
 }

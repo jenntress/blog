@@ -5,8 +5,13 @@
 body {
   font-family: 'Rosarivo';
   background-color: Gainsboro;
+  max-width: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 label {
-  color: blue;
+  color: #666;
+  margin-top: 10px;
 }

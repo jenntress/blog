@@ -21,12 +21,16 @@ http://localhost:3001/api/articles/comment/591cfda82748b90fd4c5949c
 Body: key is "content", value is your text comment.
 
 ## SUMMARY OF CHANGES
+#### AS OF 6/7/17
+- `npm install --save react-icons`
+- added LOTS of CSS
 #### AS OF 6/6/17
 - Fixed 'add new comment' - client side! (define 'comment' in the state)
 - Fixed server side signup (know how to use postman Jenn! x-www-form...)
 - All auth.js routes work in Postman!
 - Client side signup works! (create a new user from localhost:3000)
 - Client side login works - with re-route error?
+- Added `require('./App.css');` in blog/client/src/index.js
 #### AS OF 6/5/17
 - Added my picture to the homepage
 - Added browser routes - to redirect to articlelist after post & delete

@@ -2,19 +2,23 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import {jnav} from './sharedStyles/styles.css'; //
+import {jnav, navLinkContainer, logo} from './sharedStyles/styles.css'; //
 
 
 const NavigationBar = () =>
   <nav className={jnav}>
-      <ul>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/articlelist">Articles</Link>
-        <Link to="/postarticle">Post New</Link>
-        <Link to="/signup">Sign Up</Link>
-        <Link to="/login">Log In</Link>
-      </ul>
+      <div className={logo}>
+        <p>&lt;jt&gt;</p>
+      </div>
+
+      <div className={navLinkContainer}>
+        <Link to="/">home</Link>
+        <Link to="/about">about</Link>
+        <Link to="/articlelist">articles</Link>
+        <Link to="/postarticle">post new</Link>
+        <Link to="/signup">sign up</Link>
+        <Link to="/login">log in</Link>
+      </div>
   </nav>
 
 

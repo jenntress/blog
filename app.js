@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var session = require('express-session');
 var passport = require('passport');
+var auth = require('./routes/auth');
 require('./config/database-connection')(); //mongoose is configured at this location instead of inside this app.js
 
 

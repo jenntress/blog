@@ -1,5 +1,78 @@
-.LargeButton {
-  composes: button from '../../sharedStyles/styles.css';
-  font-size: 23px;
-  color: blue;
+/*components/Home/Home.js*/
+
+.homeContainer {
+
+}
+
+/********jumberTroner************/
+    .jumberTroner {
+      display: flex;
+      justify-content: space-between;
+      background-image: url('%PUBLIC_URL%/../../../border-bottom.png');
+      background-repeat: repeat-x;
+      background-position: bottom;
+      border-bottom: 3px solid darkgray;
+      background-size: 24px;
+      background-color: white;
+      height: 315px;
+    }
+    .welcomeImgContainer {
+
+    }
+    .homeimg {
+      float: right;
+      height: 300px;
+      margin-top: 10px;
+    }
+    .welcomeTextContainer {
+      padding: 10px 0 0 20px;
+    }
+    .helloText {
+      font-size: 70px;
+      color: #5D5661;
+    }
+    .myNameIs {
+      font-size: 30px;
+      color: #5D5661;
+      margin-top: -30px;
+      }
+    .myNameLine {
+      margin-top: -18px;
+    }
+    .myName {
+      font-size: 40px;
+      color: #FC8004;
+      }
+    .imma {
+      font-size: 20px;
+      color: #5D5661;
+      margin-left: 10px;
+      }
+    .iDo {
+      font-size: 30px;
+      color: #5D5661;
+      margin-top: -12px;
+      }
+
+/********latestWork**********/
+.latestWork {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.latestWorkText{
+  font-size: 18px;
+  color: #5D5661;
+  text-align: center;
+  font-family: sans-serif;
+}
+.grayLine1  {
+  width: 20px;
+  border-top: 1px;
+}
+.grayLine2  {
+  width: 20px;
+  border-top: 1px;
 }

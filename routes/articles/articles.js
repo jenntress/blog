@@ -36,7 +36,7 @@ exports.makeComment = (req, res) => {
        arty.comments.push(savedComment);//if we pass this a comment object, it will go for THAT Id
        arty.save((err, savedArticle) => { //created this "new saved comment" in this function
          if(err) throw err;
-         res.send({date: savedArticle})
+         res.send({data: savedArticle})
        })
      })
    })

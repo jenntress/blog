@@ -5,12 +5,12 @@ import {} from '../../sharedStyles/styles.css'; // shared styles in src
 import {homeContainer, jumberTroner,
         homeimg, helloText, welcomeTextContainer,
         myNameIs, myName, imma, iDo, welcomeImgContainer,
-        myNameLine, latestWork, latestWorkText,
-        grayLine1, grayLine2
+        myNameLine, latestWorkContainer, latestWorkText,
+        grayLine, latestWorkJumbo, card, cardThumbnail,
+        cardsContainer, cardTitle, cardDescription
        } from './styles.css'; // the local one in this folder
 
-const Home = (props) => {
-  return (
+const Home = (props) => (
     <div className={homeContainer}>
 
       <div className={jumberTroner}>
@@ -30,16 +30,27 @@ const Home = (props) => {
         </div>
       </div>
 
-      <div className={latestWork}>
-        <div className={grayLine1}></div>
-        <div className={latestWorkText}><p>SOME OF MY LATEST WORK</p></div>
-        <div className={grayLine2}></div>
+      <div className={latestWorkContainer}>
+        <div className={latestWorkJumbo}>
+          <hr className={grayLine}/>
+          <div className={latestWorkText}><p>SOME OF MY LATEST WORK</p></div>
+          <hr className={grayLine}/>
+        </div>
+
+        <div className={cardsContainer}>
+
+              <div className={card}>
+                  <div className={cardThumbnail}>
+                    <p className={cardTitle}>item.title</p>
+                  </div>
+                  <p className={cardDescription}>item.content</p>
+              </div>
+
+        </div>
+
       </div>
-
-
 
     </div>
   )
-}
 
 export default Home

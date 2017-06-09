@@ -21,6 +21,9 @@ http://localhost:3001/api/articles/comment/591cfda82748b90fd4c5949c
 Body: key is "content", value is your text comment.
 
 ## SUMMARY OF CHANGES
+#### AS OF 6/8/17
+- Heroku
+- 
 #### AS OF 6/7/17
 - `npm install --save react-icons`
 - added LOTS of CSS

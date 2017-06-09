@@ -13,14 +13,11 @@ var passport = require('passport');
 var auth = require('./routes/auth');
 require('./config/database-connection')(); //mongoose is configured at this location instead of inside this app.js
 
-
 //need to wrap this seeder in an if statement because it's checking true or false.
 // we NEVER upload .env stuff to github - DELETE or COMMENT OUT!!!
 // if(process.env.SEED_DATABASE === "true"){
 //   require('./config/database-seeder')();
 // }
-
-
 
 var app = express();
 
@@ -30,6 +27,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+const isProd = process.env.NODE_ENV === 'production';
+const clientPath = isProd ? 'client/build' : 'client/public';
+
+if (isProd) {
+  app.use(express.static(clientPath));
+}
+
 
 routes(app);
 
@@ -81,5 +86,9 @@ app.use(function(err, req, res, next) {
     })
 });
 
+// serve client path (from the client folder - the bundle folder that gets created)
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, clientPath, 'index.html'));
+});
 
 module.exports = app;

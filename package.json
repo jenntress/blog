@@ -5,7 +5,8 @@
   "scripts": {
     "mon": "nodemon ./bin/www",
     "test": "NODE_ENV=test mocha --no-deprecation --sort --inline-diffs --bail",
-    "dev": "nf start -p 3000 --procfile Procfile.dev"
+    "dev": "nf start -p 3000 --procfile Procfile.dev",
+    "start": "NODE_ENV=production nf start -p $PORT"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -20,6 +21,7 @@
     "foreman": "^2.0.0",
     "jquery": "^3.2.1",
     "mocha": "^3.2.0",
+    "mongodb-uri": "^0.9.7",
     "mongoose": "^4.9.8",
     "morgan": "~1.8.1",
     "passport": "^0.3.2",

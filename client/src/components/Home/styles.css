@@ -1,7 +1,7 @@
 /*components/Home/Home.js*/
 
 .homeContainer {
-
+ background-color: white;
 }
 
 /********jumberTroner************/
@@ -84,7 +84,7 @@
   border: 5px solid #FC8004;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.50);
   border-radius: 2px;
-  height: 250px;
+  height: 350px;
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -92,21 +92,15 @@
   padding-top: 20px;
 }
 .cardTitle {
-  opacity: 0.3;
-  transform: rotate(-18deg);
-  background: #000000;
-  border-radius: 3px;
-  color: white;
+  font-size: 18px;
+  color: #5D5661;
   text-align: center;
 }
 .cardThumbnail {
-  background: #B1222B;
-  border: 1px solid #979797;
-  height: 100px;
-  width: 85%;
+  height: 50%;
 }
 .cardDescription {
   color: #5D5661;
-  font-size: 22px;
+  font-size: 80%;
   padding: 10px;
 }

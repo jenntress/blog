@@ -1,13 +1,14 @@
 // blog/client/src/components/Home/Home.js
 
 import React from 'react';
+import {Link} from 'react-router';
 import {} from '../../sharedStyles/styles.css'; // shared styles in src
 import {homeContainer, jumberTroner,
         homeimg, helloText, welcomeTextContainer,
         myNameIs, myName, imma, iDo, welcomeImgContainer,
         myNameLine, latestWorkContainer, latestWorkText,
         grayLine, latestWorkJumbo, card, cardThumbnail,
-        cardsContainer, cardTitle, cardDescription
+        cardsContainer, cardTitle, cardDescription,
        } from './styles.css'; // the local one in this folder
 
 const Home = (props) => (
@@ -38,19 +39,18 @@ const Home = (props) => (
         </div>
 
         <div className={cardsContainer}>
-
-              <div className={card}>
-                  <div className={cardThumbnail}>
-                    <p className={cardTitle}>item.title</p>
-                  </div>
-                  <p className={cardDescription}>item.content</p>
+        {props.articles.slice(0, 3).map((item, index) => (
+              <div className={card} key={index}>
+                <p className={cardTitle}>{item.title}</p>
+                <img className={cardThumbnail} alt="" src={ item.img }/>
+                <p className={cardDescription}>{item.content}</p>
+                <Link className="btn btn-default" to={`/viewarticle/${item._id}`}>View</Link>
               </div>
-
+        ))}
         </div>
-
       </div>
 
     </div>
   )
 
-export default Home
+export default Home;

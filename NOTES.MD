@@ -9,21 +9,44 @@
 ## HOMEWORK
 This project is due: June 8th
 - (ERROR) Route error after successful login (does not route to ShowUser)
+- (FIX) Style @media for mobile devices.
 - (HOW-TO) Add "if" function for login/logout Navbar button??
-- (BROKEN) add reverse method to array (to show most recent articles first)
+- (BROKEN) add reverse method to array (to show most recent articles AND comments first)
 - (BROKEN) use body font from App.css - do I have to import on every component?
+- (LATER) auto-clear the comment field after submit.
 - (LATER) show most recent post on the main page
 - (LATER) show post date
 
-## POSTMAN SPECIFICS
+## UPDATE Heroku
+-
+
+## POSTMAN
+- PUT - edit and update an existing comment.  route is api/articles/id
 - POST a new comment - route is comment/Id
 http://localhost:3001/api/articles/comment/591cfda82748b90fd4c5949c
 Body: key is "content", value is your text comment.
+- LOGIN POST at http://localhost:3001/api/login
+Body: key is "email", key is "password"
+Use a@a.com and password "a" to login.
+- GET USER http://localhost:3001/api/get_user
+Show login credentials of currenly logged in user
+
 
 ## SUMMARY OF CHANGES
+#### AS OF 6/11/17
+- updated Postman software
+- added .splice to homepage to call first three articles in database
+- added img to models/article.js
+- error: "this2.setstate is not a function" - fixed wrong ajax function name and lowercased this.setState
+- moved ArticleList stylesheet from shared styles to separate css in component folder
+- Added footer
+- Moved Navbar to its own folder with its own css
+- Added !important to my sharedStyles to center the body (override bootstrap)
+- Deleted App.css
+- Added social-media buttons
 #### AS OF 6/8/17
-- Heroku
-- 
+- Heroku (these changes destroyed my app)
+- All postman routes work correctly. Error on client side.
 #### AS OF 6/7/17
 - `npm install --save react-icons`
 - added LOTS of CSS

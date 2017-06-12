@@ -1,0 +1,17 @@
+/*components/ArticleList/ArticleList.js*/
+
+/*components/ArticleList/ArticleList.js*/
+.eacharticlecontainer {
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding: 10px;
+  background-color: #E8E8E8;
+  margin: 5px;
+  box-shadow: 1px 1px 5px #888;
+}
+
+
+.eacharticlecontainer img {
+  max-height: 200px;
+  position: relative;
+}

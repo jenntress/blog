@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import {jnav, navLinkContainer, logo} from './sharedStyles/styles.css'; //
+import {jnav, navLinkContainer, logo} from './styles.css'; // the local one in this folder
 
 
 const NavigationBar = () =>

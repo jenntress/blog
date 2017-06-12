@@ -22,26 +22,10 @@ componentDidMount = () => this.loadArticles()// react lifecycle component
    });
   }
 
-deleteById = this.deleteById.bind(this)
-
- deleteById(event, _id){
- event.preventDefault();
-    $.ajax({
-      url: `/api/articles/${_id}`,
-      method: 'DELETE'
-    }).done((response) => this.setState({articles: response.data}))
- }
-
-
-
-
   render() {
     return (
       <div>
-       {this.state.articles ?
-         <ArticleList articles={this.state.articles}
-                      deleteById={this.deleteById}
-        /> : undefined}
+       {this.state.articles ?  <ArticleList articles={this.state.articles}  /> : undefined}
       </div>
     )
   }
